@@ -1,1 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DataReview Labs</title>
 
+  <style>
+    :root {
+      --bg:#06080c;
+      --text:#f5f7fa;
+      --muted:#9aa3af;
+      --card:rgba(255,255,255,0.05);
+      --border:rgba(255,255,255,0.12);
+      --accent:#00d4ff;
+      --radius:18px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(700px 500px at 20% 10%, rgba(0,212,255,0.15), transparent 60%),
+        radial-gradient(900px 600px at 80% 90%, rgba(120,92,255,0.18), transparent 60%),
+        var(--bg);
+      min-height:100vh;
+      padding:32px 18px;
+    }
+
+    .wrap {
+      max-width:960px;
+      margin:auto;
+    }
+
+    h1 {
+      margin:0 0 6px;
+      font-size:44px;
+      letter-spacing:-0.02em;
+    }
+
+    .subtitle {
+      margin:0 0 30px;
+      color:var(--muted);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:0.2s ease;
+      display:block;
+    }
+
+    .card:hover {
+      transform:translateY(-4px);
+      border-color:rgba(255,255,255,0.3);
+    }
+
+    .card h3 {
+      margin:0 0 6px;
+      font-size:18px;
+    }
+
+    .card p {
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .badge {
+      display:inline-block;
+      font-size:11px;
+      margin-top:12px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(0,212,255,0.18);
+      color:#8be8ff;
+    }
+
+    .footer {
+      margin-top:34px;
+      font-size:12px;
+      color:rgba(255,255,255,0.45);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="wrap">
+    <h1>DataReview Labs</h1>
+    <p class="subtitle">Experimental tools, prototypes, notebooks, and visual ideas.</p>
+
+    <section class="grid">
+
+      <a class="card" href="#">
+        <h3>LLM Playground</h3>
+        <p>Prompt experiments, evaluation ideas, and model comparisons.</p>
+        <span class="badge">Prototype</span>
+      </a>
+
+      <a class="card" href="#">
+        <h3>Data Visual Experiments</h3>
+        <p>Interactive charts, storytelling, and notebook outputs.</p>
+        <span class="badge">WIP</span>
+      </a>
+
+      <a class="card" href="#">
+        <h3>Agent Tools</h3>
+        <p>Autonomous workflows, orchestration, and evaluation tools.</p>
+        <span class="badge">Research</span>
+      </a>
+
+      <a class="card" href="#">
+        <h3>Notebook Demos</h3>
+        <p>Small practical data science experiments and patterns.</p>
+        <span class="badge">Demo</span>
+      </a>
+
+    </section>
+
+    <div class="footer">
+      ← <a href="https://datareview.io" style="color:#8be8ff;text-decoration:none;">Back to DataReview</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
