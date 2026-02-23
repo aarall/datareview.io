@@ -1,310 +1,105 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DataReview — Coming soon</title>
-    <meta
-      name="description"
-      content="DataReview — AI, Data, Experiments, Insights. Subscribe on Substack."
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DataReview — Coming soon</title>
 
-    <!-- Social previews -->
-    <meta property="og:title" content="DataReview" />
-    <meta property="og:description" content="AI • Data • Experiments • Insights" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://datareview.io" />
+  <meta name="description" content="DataReview — AI, Data, Experiments, Insights. Subscribe on Substack." />
 
-    <style>
-      :root {
-        --bg: #0b0d12;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.70);
-        --border: rgba(255, 255, 255, 0.10);
-        --accent: #ff6719; /* Substack-ish orange */
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
-        --radius: 22px;
-      }
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.7);
+      --border: rgba(255,255,255,0.12);
+      --accent: #ff6719;
+      --radius: 20px;
+    }
 
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        color: var(--text);
-        background:
-          radial-gradient(1000px 600px at 15% 20%, rgba(255, 103, 25, 0.22), transparent 55%),
-          radial-gradient(900px 700px at 80% 10%, rgba(120, 92, 255, 0.18), transparent 55%),
-          radial-gradient(1000px 700px at 70% 80%, rgba(0, 209, 255, 0.12), transparent 60%),
-          var(--bg);
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-        line-height: 1.3;
-      }
+    * { box-sizing: border-box; }
 
-      .wrap {
-        min-height: 100%;
-        display: grid;
-        place-items: center;
-        padding: 28px 18px;
-      }
+    body {
+      margin: 0;
+      font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(800px 500px at 20% 10%, rgba(255,103,25,0.25), transparent 60%),
+        radial-gradient(800px 600px at 80% 90%, rgba(120,92,255,0.18), transparent 60%),
+        var(--bg);
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
 
-      .card {
-        width: min(980px, 100%);
-        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
+    .card {
+      width: min(720px, 100%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 44px 34px;
+      text-align: center;
+    }
 
-      .inner {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 0;
-      }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 5vw, 56px);
+      letter-spacing: -0.02em;
+    }
 
-      @media (max-width: 860px) {
-        .inner { grid-template-columns: 1fr; }
-      }
+    .subtitle {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 17px;
+    }
 
-      .left {
-        padding: 44px 42px;
-      }
+    .embed {
+      margin-top: 20px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
 
-      .right {
-        padding: 38px 34px;
-        border-left: 1px solid var(--border);
-        background: rgba(0,0,0,0.18);
-      }
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      display: block;
+    }
 
-      @media (max-width: 860px) {
-        .right { border-left: none; border-top: 1px solid var(--border); }
-        .left { padding: 40px 28px; }
-        .right { padding: 30px 28px; }
-      }
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+    }
+  </style>
+</head>
 
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.04);
-        color: var(--muted);
-        font-size: 13px;
-        letter-spacing: 0.2px;
-      }
+<body>
 
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 0 4px rgba(255, 103, 25, 0.18);
-      }
+  <main class="card">
+    <h1>DataReview</h1>
+    <p class="subtitle">AI • Data • Experiments • Insights</p>
 
-      h1 {
-        margin: 18px 0 10px;
-        font-size: clamp(34px, 4.2vw, 56px);
-        letter-spacing: -0.02em;
-      }
+    <div class="embed">
+      <iframe
+        src="https://datareview.substack.com/embed"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
 
-      .subtitle {
-        margin: 0 0 22px;
-        font-size: 18px;
-        color: var(--muted);
-        max-width: 54ch;
-      }
+    <div class="footer">
+      © <span id="year"></span> DataReview
+    </div>
+  </main>
 
-      .pillrow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 18px 0 26px;
-      }
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-      .pill {
-        padding: 9px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.04);
-        color: rgba(255,255,255,0.78);
-        font-size: 13px;
-        letter-spacing: 0.15px;
-      }
-
-      .ctaRow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .btn {
-        appearance: none;
-        border: 1px solid transparent;
-        border-radius: 999px;
-        padding: 12px 16px;
-        font-weight: 650;
-        font-size: 14px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, opacity 160ms ease;
-        user-select: none;
-      }
-      .btn:active { transform: translateY(1px); }
-
-      .btnPrimary {
-        background: var(--accent);
-        color: #0b0d12;
-      }
-      .btnPrimary:hover { opacity: 0.95; }
-
-      .btnGhost {
-        background: rgba(255,255,255,0.04);
-        border-color: var(--border);
-        color: var(--text);
-      }
-      .btnGhost:hover { background: rgba(255,255,255,0.07); }
-
-      .right h2 {
-        margin: 2px 0 10px;
-        font-size: 16px;
-        letter-spacing: -0.01em;
-      }
-
-      .right p {
-        margin: 0 0 16px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .form {
-        display: grid;
-        gap: 10px;
-        margin: 14px 0 8px;
-      }
-
-      .input {
-        width: 100%;
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.03);
-        color: var(--text);
-        outline: none;
-      }
-      .input::placeholder { color: rgba(255,255,255,0.45); }
-      .input:focus { border-color: rgba(255,103,25,0.55); }
-
-      .tiny {
-        font-size: 12px;
-        color: rgba(255,255,255,0.55);
-      }
-
-      .footer {
-        display: flex;
-        justify-content: space-between;
-        gap: 14px;
-        padding: 14px 18px;
-        border-top: 1px solid var(--border);
-        color: rgba(255,255,255,0.55);
-        font-size: 12px;
-        background: rgba(0,0,0,0.14);
-      }
-
-      .links {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .links a {
-        color: rgba(255,255,255,0.68);
-        text-decoration: none;
-      }
-      .links a:hover { color: rgba(255,255,255,0.92); }
-
-      .mono {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="wrap">
-      <section class="card" aria-label="DataReview holding page">
-        <div class="inner">
-          <div class="left">
-            <div class="badge"><span class="dot"></span> New publication • Launching soon</div>
-
-            <h1>DataReview</h1>
-            <p class="subtitle">
-              AI • Data • Experiments • Insights — short, useful write-ups and practical notes, published on Substack.
-            </p>
-
-            <div class="pillrow" aria-label="Topics">
-              <span class="pill">LLMs</span>
-              <span class="pill">Python</span>
-              <span class="pill">Applied ML</span>
-              <span class="pill">Data Engineering</span>
-              <span class="pill">Visuals & Experiments</span>
-            </div>
-
-            <div class="ctaRow">
-              <!-- TODO: replace with your real Substack URL -->
-              <a class="btn btnPrimary" href="https://datareview.substack.com" target="_blank" rel="noreferrer">
-                Subscribe on Substack <span aria-hidden="true">→</span>
-              </a>
-              <a class="btn btnGhost" href="mailto:hello@datareview.io">
-                Contact <span class="mono" aria-hidden="true">hello@datareview.io</span>
-              </a>
-            </div>
-
-            <p class="tiny" style="margin-top: 14px;">
-              Tip: once your Substack is live, change the Substack link above to your publication URL.
-            </p>
-          </div>
-
-          <aside class="right" aria-label="Updates">
-            <h2>Get launch updates</h2>
-            <p>Drop your email and I’ll redirect you to Substack to subscribe.</p>
-
-            <!-- This form just sends the user to Substack (simple + zero backend).
-                 Replace action URL with your actual Substack subscribe endpoint if you have it.
-            -->
-            <form class="form" action="https://datareview.substack.com" method="get">
-              <input class="input" type="email" name="email" placeholder="you@domain.com" autocomplete="email" />
-              <button class="btn btnPrimary" type="submit">Subscribe</button>
-              <div class="tiny">No spam. Unsubscribe anytime.</div>
-            </form>
-
-            <hr style="border: none; border-top: 1px solid var(--border); margin: 18px 0;" />
-
-            <p class="tiny">
-              Want this page to auto-forward to Substack later? I can add a timed redirect once you’re ready.
-            </p>
-          </aside>
-        </div>
-
-        <div class="footer">
-          <div>© <span id="year"></span> DataReview</div>
-          <div class="links">
-            <!-- Optional: add your links -->
-            <a href="https://github.com/aarall" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://datareview.substack.com" target="_blank" rel="noreferrer">Substack</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+</body>
 </html>
